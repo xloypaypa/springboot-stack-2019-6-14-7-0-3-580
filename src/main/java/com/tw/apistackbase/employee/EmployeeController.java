@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,6 +35,12 @@ public class EmployeeController {
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteById(@PathVariable int id) {
         this.employeeService.removeEmployee(id);
+        return ResponseEntity.ok("");
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity deleteById(@RequestBody Employee employee) {
+        this.employeeService.addEmploy(employee);
         return ResponseEntity.ok("");
     }
 }

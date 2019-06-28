@@ -4,10 +4,13 @@ import java.util.Objects;
 
 public class Employee {
 
-    private final int id;
-    private final String name;
-    private final int age;
-    private final Gender gender;
+    private int id;
+    private String name;
+    private int age;
+    private Gender gender;
+
+    public Employee() {
+    }
 
     public Employee(int id, String name, int age, Gender gender) {
         this.id = id;
@@ -30,6 +33,22 @@ public class Employee {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     @Override
