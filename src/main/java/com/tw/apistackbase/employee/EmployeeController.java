@@ -13,15 +13,15 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    private final EmployeeDataService employeeDataService;
+    private final EmployeeService employeeService;
 
     @Autowired
-    public EmployeeController(EmployeeDataService employeeDataService) {
-        this.employeeDataService = employeeDataService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Employee>> searchAll() {
-        return ResponseEntity.ok(this.employeeDataService.getAllEmployees());
+        return ResponseEntity.ok(this.employeeService.getAllEmployees());
     }
 }

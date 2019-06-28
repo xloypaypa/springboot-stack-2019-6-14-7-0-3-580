@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EmployeeDataService {
+public class EmployeeService {
 
     private final Map<Integer, Employee> employees;
 
-    public EmployeeDataService(List<Employee> employees) {
+    public EmployeeService(List<Employee> employees) {
         this.employees = new HashMap<>();
         for (Employee employee : employees) {
             this.employees.put(employee.getId(), employee);

@@ -12,12 +12,12 @@ import java.util.List;
 class DefaultEmployeeConfig {
 
     @Bean
-    public EmployeeDataService employeeDataService() {
+    public EmployeeService employeeDataService() {
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
         employees.add(new Employee(2, "Xiaohong", 19, Gender.FEMALE));
         employees.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
-        return new EmployeeDataService(employees);
+        return new EmployeeService(employees);
     }
 
 }

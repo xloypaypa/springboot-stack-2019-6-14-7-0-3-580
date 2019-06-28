@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EmployeeDataServiceTest {
+public class EmployeeServiceTest {
 
     @Test
     public void should_return_default_employee_list_when_get_employee_list() {
@@ -17,22 +17,22 @@ public class EmployeeDataServiceTest {
         except.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
         except.add(new Employee(2, "Xiaohong", 19, Gender.FEMALE));
         except.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
-        EmployeeDataService employeeDataService = new EmployeeDataService(except);
+        EmployeeService employeeService = new EmployeeService(except);
 
-        List<Employee> actual = employeeDataService.getAllEmployees();
+        List<Employee> actual = employeeService.getAllEmployees();
 
         assertEquals(except, actual);
     }
 
     @Test
     public void should_save_the_employee_when_add_the_employee_to_data_service() {
-        EmployeeDataService employeeDataService = new EmployeeDataService(new ArrayList<>());
+        EmployeeService employeeService = new EmployeeService(new ArrayList<>());
 
-        employeeDataService.addEmploy(new Employee(1, "Xiaoming", 20, Gender.MALE));
+        employeeService.addEmploy(new Employee(1, "Xiaoming", 20, Gender.MALE));
 
         List<Employee> except = new ArrayList<>();
         except.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
-        assertEquals(except, employeeDataService.getAllEmployees());
+        assertEquals(except, employeeService.getAllEmployees());
     }
 
     @Test
@@ -41,14 +41,14 @@ public class EmployeeDataServiceTest {
         defaultEmployee.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
         defaultEmployee.add(new Employee(2, "Xiaohong", 19, Gender.FEMALE));
         defaultEmployee.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
-        EmployeeDataService employeeDataService = new EmployeeDataService(defaultEmployee);
+        EmployeeService employeeService = new EmployeeService(defaultEmployee);
 
-        employeeDataService.removeEmployee(2);
+        employeeService.removeEmployee(2);
 
         List<Employee> except = new ArrayList<>();
         except.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
         except.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
-        assertEquals(except, employeeDataService.getAllEmployees());
+        assertEquals(except, employeeService.getAllEmployees());
     }
 
     @Test
@@ -58,9 +58,9 @@ public class EmployeeDataServiceTest {
         Employee except = new Employee(2, "Xiaohong", 19, Gender.FEMALE);
         defaultEmployee.add(except);
         defaultEmployee.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
-        EmployeeDataService employeeDataService = new EmployeeDataService(defaultEmployee);
+        EmployeeService employeeService = new EmployeeService(defaultEmployee);
 
-        Employee employee = employeeDataService.searchEmployee(2);
+        Employee employee = employeeService.searchEmployee(2);
 
         assertEquals(except, employee);
     }
