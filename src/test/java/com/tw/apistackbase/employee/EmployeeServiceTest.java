@@ -29,13 +29,13 @@ public class EmployeeServiceTest {
     public void should_call_mocked_employee_stub_when_search_all_employee_list() {
         this.employeeService.searchAll();
 
-        verify(this.employeeDataService).getMockEmployee();
+        verify(this.employeeDataService).getAllEmployees();
     }
 
     @Test
     public void should_return_employee_when_search_all_employee_list() {
         List<Employee> except = Collections.singletonList(new Employee(1, "name", 18, Gender.MALE));
-        when(this.employeeDataService.getMockEmployee()).thenReturn(except);
+        when(this.employeeDataService.getAllEmployees()).thenReturn(except);
 
         List<Employee> actual = this.employeeService.searchAll();
 

@@ -19,7 +19,7 @@ public class EmployeeDataService {
         employees.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
     }
 
-    public List<Employee> getMockEmployee() {
+    public List<Employee> getAllEmployees() {
         return new ArrayList<>(this.employees);
     }
 

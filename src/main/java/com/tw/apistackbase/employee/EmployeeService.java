@@ -18,6 +18,6 @@ public class EmployeeService {
     }
 
     public List<Employee> searchAll() {
-        return new ArrayList<>(this.employeeDataService.getMockEmployee());
+        return new ArrayList<>(this.employeeDataService.getAllEmployees());
     }
 }
