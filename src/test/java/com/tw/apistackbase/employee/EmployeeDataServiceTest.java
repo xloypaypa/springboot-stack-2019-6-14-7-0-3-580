@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmployeeDataServiceTest {
 
@@ -22,5 +22,16 @@ public class EmployeeDataServiceTest {
         List<Employee> actual = employeeDataService.getAllEmployees();
 
         assertEquals(except, actual);
+    }
+
+    @Test
+    public void should_save_the_employee_when_add_the_employee_to_data_service() {
+        EmployeeDataService employeeDataService = new EmployeeDataService(new ArrayList<>());
+
+        employeeDataService.addEmploy(new Employee(1, "Xiaoming", 20, Gender.MALE));
+
+        List<Employee> except = new ArrayList<>();
+        except.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
+        assertEquals(except, employeeDataService.getAllEmployees());
     }
 }

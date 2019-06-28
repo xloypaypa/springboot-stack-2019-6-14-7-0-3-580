@@ -19,4 +19,7 @@ public class EmployeeDataService {
         return new ArrayList<>(this.employees);
     }
 
+    public void addEmploy(Employee employee) {
+        this.employees.add(employee);
+    }
 }

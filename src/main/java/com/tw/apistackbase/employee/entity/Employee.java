@@ -1,5 +1,7 @@
 package com.tw.apistackbase.employee.entity;
 
+import java.util.Objects;
+
 public class Employee {
 
     private final int id;
@@ -28,5 +30,21 @@ public class Employee {
 
     public Gender getGender() {
         return gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id &&
+                age == employee.age &&
+                Objects.equals(name, employee.name) &&
+                gender == employee.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, gender);
     }
 }
