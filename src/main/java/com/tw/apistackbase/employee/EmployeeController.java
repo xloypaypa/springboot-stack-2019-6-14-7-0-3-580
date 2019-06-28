@@ -4,6 +4,7 @@ import com.tw.apistackbase.employee.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,5 +24,10 @@ public class EmployeeController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Employee>> searchAll() {
         return ResponseEntity.ok(this.employeeService.getAllEmployees());
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Employee> searchById(@PathVariable int id) {
+        return ResponseEntity.ok(this.employeeService.searchEmployee(id));
     }
 }

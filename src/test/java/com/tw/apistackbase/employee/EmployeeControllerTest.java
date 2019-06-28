@@ -29,4 +29,12 @@ public class EmployeeControllerTest {
         this.mockMvc.perform(get("/employees")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(is(except)));
     }
+
+    @Test
+    public void should_return_employee_details_as_json_object() throws Exception {
+        String except = "{\"id\":2,\"name\":\"Xiaohong\",\"age\":19,\"gender\":\"FEMALE\"}";
+
+        this.mockMvc.perform(get("/employees/2")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(is(except)));
+    }
 }
