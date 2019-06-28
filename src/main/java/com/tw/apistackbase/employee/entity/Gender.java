@@ -1,4 +1,4 @@
-package com.tw.apistackbase.entity;
+package com.tw.apistackbase.employee.entity;
 
 public enum Gender {
     MALE("Male"), FEMALE("Female");

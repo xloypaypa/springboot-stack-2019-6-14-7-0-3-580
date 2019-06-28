@@ -1,4 +1,4 @@
-package com.tw.apistackbase.entity;
+package com.tw.apistackbase.employee.entity;
 
 public class Employee {
 

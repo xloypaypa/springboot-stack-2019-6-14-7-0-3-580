@@ -1,7 +1,6 @@
-package com.tw.apistackbase.controller;
+package com.tw.apistackbase.employee;
 
-import com.tw.apistackbase.entity.Employee;
-import com.tw.apistackbase.service.EmployeeService;
+import com.tw.apistackbase.employee.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

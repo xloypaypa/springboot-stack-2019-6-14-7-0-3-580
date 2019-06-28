@@ -1,8 +1,9 @@
-package com.tw.apistackbase.service;
+package com.tw.apistackbase.employee;
 
-import com.tw.apistackbase.config.EmployeeStub;
-import com.tw.apistackbase.entity.Employee;
-import com.tw.apistackbase.entity.Gender;
+import com.tw.apistackbase.employee.EmployeeStub;
+import com.tw.apistackbase.employee.EmployeeService;
+import com.tw.apistackbase.employee.entity.Employee;
+import com.tw.apistackbase.employee.entity.Gender;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

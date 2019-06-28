@@ -1,7 +1,7 @@
-package com.tw.apistackbase.config;
+package com.tw.apistackbase.employee;
 
-import com.tw.apistackbase.entity.Employee;
-import com.tw.apistackbase.entity.Gender;
+import com.tw.apistackbase.employee.entity.Employee;
+import com.tw.apistackbase.employee.entity.Gender;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;

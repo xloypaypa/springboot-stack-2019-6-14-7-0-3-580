@@ -1,7 +1,6 @@
-package com.tw.apistackbase.service;
+package com.tw.apistackbase.employee;
 
-import com.tw.apistackbase.config.EmployeeStub;
-import com.tw.apistackbase.entity.Employee;
+import com.tw.apistackbase.employee.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
