@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class EmployeeDataService {
 
-    public final List<Employee> employees;
+    private final List<Employee> employees;
 
     public EmployeeDataService() {
         this.employees = new ArrayList<>();
