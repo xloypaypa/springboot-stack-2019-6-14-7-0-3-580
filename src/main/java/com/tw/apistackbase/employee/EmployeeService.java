@@ -10,14 +10,14 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
-    private final EmployeeStub employeeStub;
+    private final EmployeeDataService employeeDataService;
 
     @Autowired
-    public EmployeeService(EmployeeStub employeeStub) {
-        this.employeeStub = employeeStub;
+    public EmployeeService(EmployeeDataService employeeDataService) {
+        this.employeeDataService = employeeDataService;
     }
 
     public List<Employee> searchAll() {
-        return new ArrayList<>(this.employeeStub.getMockEmployee());
+        return new ArrayList<>(this.employeeDataService.getMockEmployee());
     }
 }

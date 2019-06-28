@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-public class EmployeeStub {
+public class EmployeeDataService {
 
     public List<Employee> getMockEmployee() {
         List<Employee> employees = new ArrayList<>();

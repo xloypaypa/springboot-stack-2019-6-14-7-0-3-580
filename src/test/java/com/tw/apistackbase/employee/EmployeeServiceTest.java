@@ -1,7 +1,5 @@
 package com.tw.apistackbase.employee;
 
-import com.tw.apistackbase.employee.EmployeeStub;
-import com.tw.apistackbase.employee.EmployeeService;
 import com.tw.apistackbase.employee.entity.Employee;
 import com.tw.apistackbase.employee.entity.Gender;
 import org.junit.Before;
@@ -19,25 +17,25 @@ import static org.mockito.Mockito.*;
 public class EmployeeServiceTest {
 
     private EmployeeService employeeService;
-    private EmployeeStub employeeStub;
+    private EmployeeDataService employeeDataService;
 
     @Before
     public void setUp() throws Exception {
-        this.employeeStub = mock(EmployeeStub.class);
-        this.employeeService = new EmployeeService(this.employeeStub);
+        this.employeeDataService = mock(EmployeeDataService.class);
+        this.employeeService = new EmployeeService(this.employeeDataService);
     }
 
     @Test
     public void should_call_mocked_employee_stub_when_search_all_employee_list() {
         this.employeeService.searchAll();
 
-        verify(this.employeeStub).getMockEmployee();
+        verify(this.employeeDataService).getMockEmployee();
     }
 
     @Test
     public void should_return_employee_when_search_all_employee_list() {
         List<Employee> except = Collections.singletonList(new Employee(1, "name", 18, Gender.MALE));
-        when(this.employeeStub.getMockEmployee()).thenReturn(except);
+        when(this.employeeDataService.getMockEmployee()).thenReturn(except);
 
         List<Employee> actual = this.employeeService.searchAll();
 
