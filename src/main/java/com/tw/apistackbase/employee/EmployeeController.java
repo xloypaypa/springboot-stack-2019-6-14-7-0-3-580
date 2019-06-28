@@ -30,4 +30,10 @@ public class EmployeeController {
     public ResponseEntity<Employee> searchById(@PathVariable int id) {
         return ResponseEntity.ok(this.employeeService.searchEmployee(id));
     }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity deleteById(@PathVariable int id) {
+        this.employeeService.removeEmployee(id);
+        return ResponseEntity.ok("");
+    }
 }
