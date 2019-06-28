@@ -50,4 +50,18 @@ public class EmployeeDataServiceTest {
         except.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
         assertEquals(except, employeeDataService.getAllEmployees());
     }
+
+    @Test
+    public void should_return_the_employee_when_search_employ_by_id() {
+        List<Employee> defaultEmployee = new ArrayList<>();
+        defaultEmployee.add(new Employee(1, "Xiaoming", 20, Gender.MALE));
+        Employee except = new Employee(2, "Xiaohong", 19, Gender.FEMALE);
+        defaultEmployee.add(except);
+        defaultEmployee.add(new Employee(3, "Xiaozhi", 15, Gender.MALE));
+        EmployeeDataService employeeDataService = new EmployeeDataService(defaultEmployee);
+
+        Employee employee = employeeDataService.searchEmployee(2);
+
+        assertEquals(except, employee);
+    }
 }

@@ -31,4 +31,8 @@ public class EmployeeDataService {
     public void removeEmployee(int id) {
         this.employees.remove(id);
     }
+
+    public Employee searchEmployee(int id) {
+        return this.employees.get(id);
+    }
 }
